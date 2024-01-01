@@ -72,7 +72,7 @@ In the realm of home safety, the specter of fire related incidents has persisten
 
 Basically, our microcontroller controls and process everything automatically. And we are saving our data with a database. For user interface, you can control your system with web control panel over the database.
 
-![Screen Shot]([Complete System](https://raw.githubusercontent.com/devPriceington/IOT-Based-Smart-Home-Fire-Alarm-System/main/Images/system.png?token=GHSAT0AAAAAACMHJKL2DPUTGFJTZ3I24E4UZMSW76A))
+![Screen Shot](https://github.com/devPriceington/IOT-Based-Smart-Home-Fire-Alarm-System/blob/main/Images/system.png)
 
 
 ### Components
