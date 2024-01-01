@@ -1,7 +1,7 @@
 <br/>
 <p align="center">
   <a href="https://github.com/devPriceington/SEIS Fire Alarm System">
-    <img src="https://www.ageaportal.com/images/aydin_univ.png" alt="Logo" width="250" height="250">
+    <img src="https://www.ageaportal.com/images/aydin_univ.png" alt="Logo" width="360" height="200">
   </a>
 
   <h3 align="center">SEIS IOT Based Smart Home Fire Alarm System</h3>
@@ -13,7 +13,6 @@
   </p>
 </p>
 
-![Stargazers](https://img.shields.io/github/stars/devPriceington/SEIS Fire Alarm System?style=social) 
 
 ## Table Of Contents
 
