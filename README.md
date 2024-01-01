@@ -29,15 +29,15 @@
 
 This project is a final project made by Istanbul Aydin University Electrical and Electronics Engineering Students for the COM473 INTERNET OF THINGS & INDUSTRY 4.0 course.
 
-The team that carried out the project:
-EMRE IŞIK
-EMRE SÖZEN
-SAMET ENES BAYEZİT
-HÜSEYİN PAMUK
-ARDA BARBER
+* The team that carried out the project:
+* * EMRE IŞIK
+* * EMRE SÖZEN
+* * SAMET ENES BAYEZİT
+* * HÜSEYİN PAMUK
+* * ARDA BARBER
 
-Lecturer:
-Dr. MHD WASIM RAED
+* Lecturer:
+* * Dr. MHD WASIM RAED
 
 The implementation of an IoT based fire focused smart home system represents a pivotal advancement in addressing fire safety across diverse housing structures. This project aims to fill the safety gap, particularly in older homes, where the absence of modern fire alarm systems has led to tragic consequences. Our s olution provides an affordable, easy to integrate, and compact system that ensures widespread access to advanced fire detection and prevention measures. By leveraging sensors, Wi Fi connectivity, and a user friendly web control panel, our system offers rea l time monitoring and automated fan control. This innovation not only simplifies fire safety but also empowers users with manual control options. The project's core mission is to democratize advanced fire safety measures, contributing to safer living envir onments for all households, regardless of their age or construction.
 
