@@ -72,7 +72,7 @@ In the realm of home safety, the specter of fire related incidents has persisten
 
 Basically, our microcontroller controls and process everything automatically. And we are saving our data with a database. For user interface, you can control your system with web control panel over the database.
 
-![Screen Shot]([Complete System](Images/system.png))
+![Screen Shot]([Complete System](https://raw.githubusercontent.com/devPriceington/IOT-Based-Smart-Home-Fire-Alarm-System/main/Images/system.png?token=GHSAT0AAAAAACMHJKL2DPUTGFJTZ3I24E4UZMSW76A))
 
 
 ### Components
@@ -90,19 +90,19 @@ Basically, our microcontroller controls and process everything automatically. An
 
 Proteus Circuit:
 
-![Screen Shot]([Proteus Schematic](Images/proteus.png))
+![Screen Shot]([Proteus Schematic](https://raw.githubusercontent.com/devPriceington/IOT-Based-Smart-Home-Fire-Alarm-System/main/Images/proteus.png?token=GHSAT0AAAAAACMHJKL2ZWPO4HJTSQT5LGJQZMSW7NA))
 
 The circuit operates by plugging an adapter, reducing the circuit from 220V to 9V, into the socket. Once power is supplied to the circuit, 7805CV efficiently drop the voltage from 9V to 5V. Following the circuit's working principle, data from the MQ2 gas sensor and DHT22 temperature sensor is transmitted to the ESP32 card. And ESP32 process it. Then the ESP32 card transferring the data to the Firebase Realtime Database. Through our website, users can promptly view real-time sensor data. If desired, users can manually adjust the speed data on the website to control the fan connected to the load circuit. Given the system's versatility across different applications, the website can display multiple panels. Information on the website is presented in user-friendly measurement units commonly used in daily life for easy comprehension.
 To operate our fan, we are using IRF510 MOSFET. And we are driving the MOSFET with PWM signals producing from ESP32 microcontroller. And we are using C++ software language to program ESP32.
 We create an extremely safe system by converting the 220V AC motor we receive from the network to 5V DC with good engineering work.
 At the web side, we are using HTML, CSS, JavaScript software languages. And we have a domain to control your IOT device, first of all you need to login your account. After login, you will see your devices. And then, you can easily control and monitorize your system. 
 
-![Screen Shot]([Web Panel Login Screen](Images/webLogin.png))
+![Screen Shot]([Web Panel Login Screen](https://raw.githubusercontent.com/devPriceington/IOT-Based-Smart-Home-Fire-Alarm-System/main/Images/webLogin.png?token=GHSAT0AAAAAACMHJKL23VMDAWYEWVZSF3ZCZMSXAHQ))
 
 In the control pane you can see the temperature as a Celsius and gas as a ppm values. And according to this values microcontroller arranges fan speed automatically. But if you want, you can control the fan manually from here by clicking the M/A button (A text field will appear, then you should type percentage you want). 
 Above the 1050 ppm or 30 degrees, device accepts it is as a dangerous situation and fan works %100. Below 1050 ppm or 24 degrees accepts as a normal situation and fan does not work. And fan speed mapped among the 24 and 30 degrees. It automatically controls the speed according to the temperature.
 
-![Screen Shot]([Web Control Panel](Images/webPanel.png))
+![Screen Shot]([Web Control Panel](https://raw.githubusercontent.com/devPriceington/IOT-Based-Smart-Home-Fire-Alarm-System/main/Images/webPanel.png?token=GHSAT0AAAAAACMHJKL2DWQQLHAI3LHFOOJAZMSXASQ))
 
 For summary, the microcontroller connects to the Wi-Fi at home, detects temperature and smoke with the sensors on it, processes the data and sends it to the Firebase Realtime Database. Then you can see and control this data on the website we have made.
 
@@ -112,7 +112,7 @@ Please see the report for detailed project production stages.
 
 ### Whole System
 
-![Screen Shot]([Web Control Panel](Images/wholeSys.png))
+![Screen Shot]([Web Control Panel](https://raw.githubusercontent.com/devPriceington/IOT-Based-Smart-Home-Fire-Alarm-System/main/Images/wholeSys.png?token=GHSAT0AAAAAACMHJKL3FWTDMTVHNYPYAMYSZMSXA4A))
 
 ## Contributing
 
@@ -126,7 +126,7 @@ Contributions are what make the open source community such an amazing place to b
 
 ## License
 
-Distributed under the MIT License. See [LICENSE](https://github.com/devPriceington/SEIS Fire Alarm System/blob/main/LICENSE.md) for more information.
+Distributed under the MIT License. See [LICENSE](https://github.com/devPriceington/IOT-Based-Smart-Home-Fire-Alarm-System/blob/main/LICENSE) for more information.
 
 ## Author
 
