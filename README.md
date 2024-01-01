@@ -1,7 +1,7 @@
 <br/>
 <p align="center">
   <a href="https://github.com/devPriceington/SEIS Fire Alarm System">
-    <img src="https://www.ageaportal.com/images/aydin_univ.png" alt="Logo" width="100" height="100">
+    <img src="https://www.ageaportal.com/images/aydin_univ.png" alt="Logo" width="150" height="150">
   </a>
 
   <h3 align="center">SEIS IOT Based Smart Home Fire Alarm System</h3>
@@ -64,79 +64,72 @@ The implementation of an IoT based fire focused smart home system represents a p
 
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+### Introduction - Problem Statement
+
+In the realm of home safety, the specter of fire related incidents has persistently haunted households, with a particular gravity in older homes lacking modern fire alarm systems. The repercussions of delayed intervention have been tragically evident. Our project stems from a deeply rooted concern for the lives lost and injuries sustained due to this pressing issue. Recognizing the stark gaps in existing fire safety solutions, we embark ed on a transformative journey to develop an innovative IoT based fire alarm system that transcends the limitations of current options. The landscape of fire safety solutions has witnessed the emergence of various systems, from traditional smoke detectors to sophisticated smart home setups. However, the accessibility of IoT based smart home systems has predominantly been confined to luxury residences, and traditional detectors are often exclusive to newly constructed homes. The primary reason behind this gap lies in the integration process, which is inherently easier during the construction phase. Our mission is to dismantle these barriers and democratize fire safety. We envision a future where an IoT based fire alarm system is not a luxury but an essential component of every home and office, effortlessly deployable without the need for structural m odifications. This initiative is not merely about introducing a product; it is a crusade to make cutting edge fire detection and prevention an integral part of every living space, regardless of its age or construction. Through this project, we strive to pi oneer a paradigm shift in home safety, ushering in a new era of comprehensive protection, peace of mind, and swift responses to fire emergencies for individuals and families worldwide.
 
 ### System
 
 Basically, our microcontroller controls and process everything automatically. And we are saving our data with a database. For user interface, you can control your system with web control panel over the database.
 
-![Screen Shot](h![Alt text](Images/system.png))
+![Screen Shot]([Complete System](Images/system.png))
 
-* npm
 
-```sh
-npm install npm@latest -g
-```
+### Components
 
-### Installation
+* ESP32 WROOM 32D
+* FAN
+* MQ-2 Gas Sensor
+* DHT22 Digital Temperature and Humidity Sensor
+* 7805CV Voltage Regulator
+* IRF510 N Channel Power Mosfet
+* 12V Adapter
+* Resistors, capacitors, diodes and copper board
 
-1. Get a free API Key at [https://example.com](https://example.com)
+## Usage - How It Works?
 
-2. Clone the repo
+Proteus Circuit:
 
-```sh
-git clone https://github.com/your_username_/Project-Name.git
-```
+![Screen Shot]([Proteus Schematic](Images/proteus.png))
 
-3. Install NPM packages
+The circuit operates by plugging an adapter, reducing the circuit from 220V to 9V, into the socket. Once power is supplied to the circuit, 7805CV efficiently drop the voltage from 9V to 5V. Following the circuit's working principle, data from the MQ2 gas sensor and DHT22 temperature sensor is transmitted to the ESP32 card. And ESP32 process it. Then the ESP32 card transferring the data to the Firebase Realtime Database. Through our website, users can promptly view real-time sensor data. If desired, users can manually adjust the speed data on the website to control the fan connected to the load circuit. Given the system's versatility across different applications, the website can display multiple panels. Information on the website is presented in user-friendly measurement units commonly used in daily life for easy comprehension.
+To operate our fan, we are using IRF510 MOSFET. And we are driving the MOSFET with PWM signals producing from ESP32 microcontroller. And we are using C++ software language to program ESP32.
+We create an extremely safe system by converting the 220V AC motor we receive from the network to 5V DC with good engineering work.
+At the web side, we are using HTML, CSS, JavaScript software languages. And we have a domain to control your IOT device, first of all you need to login your account. After login, you will see your devices. And then, you can easily control and monitorize your system. 
 
-```sh
-npm install
-```
+![Screen Shot]([Web Panel Login Screen](Images/webLogin.png))
 
-4. Enter your API in `config.js`
+In the control pane you can see the temperature as a Celsius and gas as a ppm values. And according to this values microcontroller arranges fan speed automatically. But if you want, you can control the fan manually from here by clicking the M/A button (A text field will appear, then you should type percentage you want). 
+Above the 1050 ppm or 30 degrees, device accepts it is as a dangerous situation and fan works %100. Below 1050 ppm or 24 degrees accepts as a normal situation and fan does not work. And fan speed mapped among the 24 and 30 degrees. It automatically controls the speed according to the temperature.
 
-```JS
-const API_KEY = 'ENTER YOUR API';
-```
+![Screen Shot]([Web Control Panel](Images/webPanel.png))
 
-## Usage
+For summary, the microcontroller connects to the Wi-Fi at home, detects temperature and smoke with the sensors on it, processes the data and sends it to the Firebase Realtime Database. Then you can see and control this data on the website we have made.
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+## Production Stages
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+Please see the report for detailed project production stages.
 
-## Roadmap
+### Whole System
 
-See the [open issues](https://github.com/devPriceington/SEIS Fire Alarm System/issues) for a list of proposed features (and known issues).
+![Screen Shot]([Web Control Panel](Images/wholeSys.png))
 
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-* If you have suggestions for adding or removing projects, feel free to [open an issue](https://github.com/devPriceington/SEIS Fire Alarm System/issues/new) to discuss it, or directly create a pull request after you edit the *README.md* file with necessary changes.
+* If you have suggestions for adding or removing projects, feel free to [open an issue] to discuss it, or directly create a pull request after you edit the *README.md* file with necessary changes.
 * Please make sure you check your spelling and grammar.
 * Create individual PR for each suggestion.
-* Please also read through the [Code Of Conduct](https://github.com/devPriceington/SEIS Fire Alarm System/blob/main/CODE_OF_CONDUCT.md) before posting your first idea as well.
+* Please also read through the [Code Of Conduct] before posting your first idea as well.
 
-### Creating A Pull Request
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
 ## License
 
 Distributed under the MIT License. See [LICENSE](https://github.com/devPriceington/SEIS Fire Alarm System/blob/main/LICENSE.md) for more information.
 
-## Authors
+## Author
 
-* **Shaan Khan** - *Comp Sci Student* - [Shaan Khan](https://github.com/ShaanCoding/) - *Built ReadME Template*
+* **Emre IŞIK** - *Electrical and Electronic Student* - [Emre IŞIK](https://github.com/devPriceington) - *Built ReadME Template*
 
-## Acknowledgements
 
-* [ShaanCoding](https://github.com/ShaanCoding/)
-* [Othneil Drew](https://github.com/othneildrew/Best-README-Template)
-* [ImgShields](https://shields.io/)
