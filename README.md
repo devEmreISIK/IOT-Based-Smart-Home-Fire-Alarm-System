@@ -34,7 +34,7 @@ This project is a final project made by Istanbul Aydin University Electrical and
 * * EMRE SÖZEN
 * * SAMET ENES BAYEZİT
 * * HÜSEYİN PAMUK
-* * ARDA BARBER
+* * ARDA BERBER
 
 * Lecturer:
 * * Dr. MHD WASIM RAED
