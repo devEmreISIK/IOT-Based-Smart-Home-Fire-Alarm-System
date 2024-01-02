@@ -21,7 +21,7 @@
 * [Getting Started](#getting-started)
 * [Usage - How It Works?](#usage-how-it-works)
 * [License](#license)
-* [Author](#author)
+* [Authors](#authors)
 
 ## About The Project
 
@@ -63,7 +63,12 @@ The implementation of an IoT based fire focused smart home system represents a p
 
 ### Introduction - Problem Statement
 
-In the realm of home safety, the specter of fire related incidents has persistently haunted households, with a particular gravity in older homes lacking modern fire alarm systems. The repercussions of delayed intervention have been tragically evident. Our project stems from a deeply rooted concern for the lives lost and injuries sustained due to this pressing issue. Recognizing the stark gaps in existing fire safety solutions, we embark ed on a transformative journey to develop an innovative IoT based fire alarm system that transcends the limitations of current options. The landscape of fire safety solutions has witnessed the emergence of various systems, from traditional smoke detectors to sophisticated smart home setups. However, the accessibility of IoT based smart home systems has predominantly been confined to luxury residences, and traditional detectors are often exclusive to newly constructed homes. The primary reason behind this gap lies in the integration process, which is inherently easier during the construction phase. Our mission is to dismantle these barriers and democratize fire safety. We envision a future where an IoT based fire alarm system is not a luxury but an essential component of every home and office, effortlessly deployable without the need for structural m odifications. This initiative is not merely about introducing a product; it is a crusade to make cutting edge fire detection and prevention an integral part of every living space, regardless of its age or construction. Through this project, we strive to pi oneer a paradigm shift in home safety, ushering in a new era of comprehensive protection, peace of mind, and swift responses to fire emergencies for individuals and families worldwide.
+In the realm of home safety, the specter of fire-related incidents has persistently haunted households, with a particular gravity in older homes lacking modern fire alarm systems. The repercussions of delayed intervention have been tragically evident. Our project stems from a deeply rooted concern for the lives lost and injuries sustained due to this pressing issue. Recognizing the stark gaps in existing fire safety solutions, we embarked on a transformative journey to develop an innovative IoT-based fire alarm system that transcends the limitations of current options.
+
+The landscape of fire safety solutions has witnessed the emergence of various systems, from traditional smoke detectors to sophisticated smart home setups. However, the accessibility of IoT-based smart home systems has predominantly been confined to luxury residences, and traditional detectors are often exclusive to newly constructed homes. The primary reason behind this gap lies in the integration process, which is inherently easier during the construction phase.
+
+Our mission is to dismantle these barriers and democratize fire safety. We envision a future where an IoT-based fire alarm system is not a luxury but an essential component of every home and office, effortlessly deployable without the need for structural modifications. This initiative is not merely about introducing a product; it is a crusade to make cutting-edge fire detection and prevention an integral part of every living space, regardless of its age or construction. Through this project, we strive to pioneer a paradigm shift in home safety, ushering in a new era of comprehensive protection, peace of mind, and swift responses to fire emergencies for individuals and families worldwide.
+
 
 ### System
 
@@ -91,6 +96,7 @@ Proteus Circuit:
 
 The circuit operates by plugging an adapter, reducing the circuit from 220V to 9V, into the socket. Once power is supplied to the circuit, 7805CV efficiently drop the voltage from 9V to 5V. Following the circuit's working principle, data from the MQ2 gas sensor and DHT22 temperature sensor is transmitted to the ESP32 card. And ESP32 process it. Then the ESP32 card transferring the data to the Firebase Realtime Database. Through our website, users can promptly view real-time sensor data. If desired, users can manually adjust the speed data on the website to control the fan connected to the load circuit. Given the system's versatility across different applications, the website can display multiple panels. Information on the website is presented in user-friendly measurement units commonly used in daily life for easy comprehension.
 To operate our fan, we are using IRF510 MOSFET. And we are driving the MOSFET with PWM signals producing from ESP32 microcontroller. And we are using C++ software language to program ESP32.
+
 We create an extremely safe system by converting the 220V AC motor we receive from the network to 5V DC with good engineering work.
 At the web side, we are using HTML, CSS, JavaScript software languages. And we have a domain to control your IOT device, first of all you need to login your account. After login, you will see your devices. And then, you can easily control and monitorize your system. 
 
@@ -105,7 +111,7 @@ For summary, the microcontroller connects to the Wi-Fi at home, detects temperat
 
 ## Production Stages
 
-* Please see the report (Report.pdf) for detailed project production stages.
+* Please see the report [Report.pdf](https://github.com/devPriceington/IOT-Based-Smart-Home-Fire-Alarm-System/blob/main/Reports%20and%20Documents/Report.pdf) for detailed project production stages.
 
 ### Whole System
 
@@ -125,8 +131,9 @@ Contributions are what make the open source community such an amazing place to b
 
 Distributed under the MIT License. See [LICENSE](https://github.com/devPriceington/IOT-Based-Smart-Home-Fire-Alarm-System/blob/main/LICENSE) for more information.
 
-## Author
+## Authors
 
-* **Emre IŞIK** - *Electrical and Electronic Student* - [Emre IŞIK](https://github.com/devPriceington) - *Built ReadME Template*
+* **Emre IŞIK** - *Electrical and Electronic Student* - [Emre IŞIK](https://github.com/devPriceington) 
+* **Emre SÖZEN** - *Electrical and Electronic Student* - [Emre SÖZEN](https://github.com/devSozen) 
 
 
