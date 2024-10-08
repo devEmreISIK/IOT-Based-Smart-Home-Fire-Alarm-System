@@ -1,9 +1,11 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
   <title>SEIS Fire Alarm System</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link rel="icon" href="data:,">
   <style>
     html {
@@ -11,40 +13,25 @@
       display: inline-block;
       text-align: center;
     }
-  
+
     p {
       font-size: 1.2rem;
     }
-  
+
     body {
       margin: 0;
     }
-  
+
     .topnav {
       overflow: hidden;
       background-color: #50B8B4;
       color: white;
       font-size: 1rem;
     }
-  
+
     .content {
       padding: 40px;
     }
-  
-/*     .card {
-      background-color: white;
-      box-shadow: 2px 2px 12px 1px rgba(140, 140, 140, .5);
-      padding: 20px;
-    }
-  
-    .cards {
-      max-width: 800px;
-      margin: 0 auto;
-      display: grid;
-      grid-gap: 2rem;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    } */
-
 
     .cards {
       max-width: 800px;
@@ -55,7 +42,7 @@
     }
 
     .card {
-      flex: 0 1 calc(30% - 40px); 
+      flex: 0 1 calc(30% - 40px);
       margin: 10px;
       background-color: white;
       box-shadow: 2px 2px 12px 1px rgba(140, 140, 140, .5);
@@ -64,7 +51,7 @@
     }
 
     .card2 {
-      flex: 0 1 calc(30% - 40px); 
+      flex: 0 1 calc(30% - 40px);
       margin: 10px;
       background-color: white;
       box-shadow: 2px 2px 12px 1px rgba(140, 140, 140, .5);
@@ -73,18 +60,18 @@
     }
 
     .card3 {
-      flex: 0 1 calc(30% - 40px); 
+      flex: 0 1 calc(30% - 40px);
       margin: 10px;
       background-color: white;
       box-shadow: 2px 2px 12px 1px rgba(140, 140, 140, .5);
       padding: 20px;
       text-align: center;
     }
-  
+
     .reading {
       font-size: 1.4rem;
     }
-  
+
     .form-card input[type="text"] {
       width: 70%;
       padding: 10px;
@@ -92,7 +79,7 @@
       border: 1px solid #ccc;
       border-radius: 5px;
     }
-  
+
     .form-card button {
       width: 30%;
       padding: 10px;
@@ -103,7 +90,7 @@
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
-  
+
     .form-card button:hover {
       background-color: #45a049;
     }
@@ -113,6 +100,7 @@
     }
   </style>
 </head>
+
 <body>
   <div class="topnav">
     <h1>SEIS</h1>
@@ -120,144 +108,97 @@
   <div class="content">
     <div class="cards">
       <div class="card">
-        <p><i class="fas fa-thermometer-half" style="color:#059e8a;"></i> Hall Temperature</p><p><span class="reading"><span id="temp2">Loading...</span></span></p>
+        <p><i class="fas fa-thermometer-half" style="color:#059e8a;"></i> Hall Temperature</p>
+        <p><span class="reading"><span id="temp2">Loading...</span></span></p>
       </div>
       <div class="card2">
-        <p><i class="fas fa-solid fa-cloud" style="color:#e36834;"></i> Hall Gas</p><p><span class="reading"><span id="gas2">Loading...</span></span></p>
+        <p><i class="fas fa-solid fa-cloud" style="color:#e36834;"></i> Hall Gas</p>
+        <p><span class="reading"><span id="gas2">Loading...</span></span></p>
       </div>
       <div class="card">
-        <p><i class="fas fa-snowflake" style="color:#00add6;"></i> Fan Speed</p><p><span class="reading"><span id="fan2">Loading...</span></span></p>
+        <p><i class="fas fa-snowflake" style="color:#00add6;"></i> Fan Speed</p>
+        <p><span class="reading"><span id="fan2">Loading...</span></span></p>
         <div class="form-card">
           <label for="fan2Input">For manual value, click M/A</label>
           <input type="text" placeholder="Enter Fan Speed" id="fan2Input" style="display: none">
           <button onclick="updateFan2()">Update</button>
           <button onclick="updateFan2MA()">M/A</button>
         </div>
+      </div>
     </div>
 
-  </div>
-  
-  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database-compat.js"></script>
-  
-  <script>
-    
-    var firebaseConfig = {
-      apiKey: "--",
-      authDomain: "--",
-      databaseURL: "--",
-      projectId: "--",
-      storageBucket: "--",
-      messagingSenderId: "--",
-      appId: "--"
-    };
-    
-    firebase.initializeApp(firebaseConfig);
-    
-    var temp1Ref = firebase.database().ref('temperature1');
-    var temp2Ref = firebase.database().ref('temperature2');
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database-compat.js"></script>
 
-    var gas1Ref = firebase.database().ref('gasppm1');
-    var gas2Ref = firebase.database().ref('gasppm2');
+    <script>
 
-    var fan1Ref = firebase.database().ref('fanspeed1');
-    var fan2Ref = firebase.database().ref('fanspeed2');
+      var firebaseConfig = {
+        apiKey: "--",
+        authDomain: "--",
+        databaseURL: "--",
+        projectId: "--",
+        storageBucket: "--",
+        messagingSenderId: "--",
+        appId: "--"
+      };
 
-    var fan1MAref = firebase.database().ref('fan1MA');
-    var fan2MAref = firebase.database().ref('fan2MA');
+      firebase.initializeApp(firebaseConfig);
 
-    
-    function updateFan1() {
-      var fan1Value = document.getElementById("fan1Input").value;
-      if(fan1Value > 100){fan1Value = 100}
-      if(fan1Value < 0){fan1Value = 0}
-      if(fan1MAValue == true) {
-        fan1Ref.set(parseFloat(fan1Value));
-      }
-    }
+      var temp2Ref = firebase.database().ref('temperature2');
 
-    function updateFan1MA() {
-      fan1MAValue = !fan1MAValue;
-      fan1MAref.set(fan1MAValue);
-    }
+      var gas2Ref = firebase.database().ref('gasppm2');
 
-    function updateFan2() {
-      var fan2Value = document.getElementById("fan2Input").value;
-      if(fan2Value > 100){fan2Value = 100}
-      if(fan2Value < 0){fan2Value = 0}
-      if(fan2MAValue == true) {
-        fan2Ref.set(parseFloat(fan2Value));
-      }
-    }
+      var fan2Ref = firebase.database().ref('fanspeed2');
 
-    function updateFan2MA() {
-      fan2MAValue = !fan2MAValue;
-      fan2MAref.set(fan2MAValue);
-    }
+      var fan2MAref = firebase.database().ref('fan2MA');
 
 
-  
-    temp1Ref.on('value', function(snapshot) {
-      document.getElementById("temp1").innerHTML = snapshot.val() + ' &deg;C';
-    });
-    
-    temp2Ref.on('value', function(snapshot) {
-      document.getElementById("temp2").innerHTML = snapshot.val() + ' &deg;C';
-    });
-
-
-    var alarmSound = new Audio('alarm.mp3');
-
-    gas1Ref.on('value', function(snapshot) {
-      var gas1Value = snapshot.val();
-      document.getElementById("gas1").innerHTML = snapshot.val() + ' ppm';
-      var card = document.querySelector('.card:nth-child(2)');
-      if (gas1Value > 1050) {
-        card.classList.add('red-card'); 
-        alarmSound.play();
-      } else {
-        card.classList.remove('red-card'); 
-        alarmSound.pause();
-        alarmSound.currentTime = 0;
+      function updateFan1() {
+        var fan1Value = document.getElementById("fan1Input").value;
+        if (fan1Value > 100) { fan1Value = 100 }
+        if (fan1Value < 0) { fan1Value = 0 }
+        if (fan1MAValue == true) {
+          fan1Ref.set(parseFloat(fan1Value));
+        }
       }
 
-    });
-    gas2Ref.on('value', function(snapshot) {
-      var gas2Value = snapshot.val();
-      document.getElementById("gas2").innerHTML = snapshot.val() + ' ppm';
-      var card = document.querySelector('.card2:nth-child(2)');
-      if (gas2Value > 1050) {
-        card.classList.add('red-card'); 
-        alarmSound.play();
-      } else {
-        card.classList.remove('red-card'); 
-        alarmSound.pause();
-        alarmSound.currentTime = 0;
+      function updateFan1MA() {
+        fan1MAValue = !fan1MAValue;
+        fan1MAref.set(fan1MAValue);
       }
-    });
-    
+
+      temp1Ref.on('value', function (snapshot) {
+        document.getElementById("temp1").innerHTML = snapshot.val() + ' &deg;C';
+      });
+
+      var alarmSound = new Audio('alarm.mp3');
+
+      gas2Ref.on('value', function (snapshot) {
+        var gas2Value = snapshot.val();
+        document.getElementById("gas2").innerHTML = snapshot.val() + ' ppm';
+        var card = document.querySelector('.card2:nth-child(2)');
+        if (gas2Value > 1050) {
+          card.classList.add('red-card');
+          alarmSound.play();
+        } else {
+          card.classList.remove('red-card');
+          alarmSound.pause();
+          alarmSound.currentTime = 0;
+        }
+      });
 
 
-    fan1Ref.on('value', function(snapshot) {
-      document.getElementById("fan1").innerHTML = snapshot.val() + ' &percnt;';
-    });
-    fan2Ref.on('value', function(snapshot) {
-      document.getElementById("fan2").innerHTML = snapshot.val() + ' &percnt;';
-    });
-
-    fan1MAref.on('value', function(snapshot) {
-      fan1MAValue = snapshot.val();
-      fan1Input.style.display = fan1MAValue === true ? "inline-block" : "none";
-    });
-
-    fan2MAref.on('value', function(snapshot) {
-      fan2MAValue = snapshot.val();
-      fan2Input.style.display = fan2MAValue === true ? "inline-block" : "none";
-    });
-    
+      fan2Ref.on('value', function (snapshot) {
+        document.getElementById("fan2").innerHTML = snapshot.val() + ' &percnt;';
+      });
 
 
-  </script>
+      fan2MAref.on('value', function (snapshot) {
+        fan2MAValue = snapshot.val();
+        fan2Input.style.display = fan2MAValue === true ? "inline-block" : "none";
+      });
+
+    </script>
 </body>
-</html>
 
+</html>
